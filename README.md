@@ -8,7 +8,9 @@ Personal Claude Code slash commands, available system-wide in every project.
 |---|---|
 | `/clean-branches` | Audit and delete merged/stale local git branches |
 | `/review-pr` | Review open PR comments, address valid ones, reply and resolve threads |
-| `/gen-puml` | Regenerate all PlantUML diagrams in `docs/` |
+| `/gen-puml` | Regenerate all existing PlantUML diagrams in `docs/` to PNG |
+| `/gen-c4` | Generate a C4 Container diagram from the codebase and render to PNG |
+| `/gen-erd` | Generate an ERD from schema files and render to PNG |
 | `/ship` | Create issue → branch → commit → PR, wired into the project board |
 
 ---
@@ -48,6 +50,8 @@ Run `./install.sh` again after adding new commands — it's idempotent.
 claude-commands/
 ├── commands/
 │   ├── clean-branches.md
+│   ├── gen-c4.md
+│   ├── gen-erd.md
 │   ├── gen-puml.md
 │   ├── review-pr.md
 │   └── ship.md
