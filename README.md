@@ -18,7 +18,7 @@ Personal Claude Code slash commands, available system-wide in every project.
 ### 1. Clone the repo
 
 ```bash
-git clone git@github.com:<your-username>/claude-commands.git ~/Desktop/claude-commands
+git clone git@github.com:NotYuSheng/claude-commands.git ~/Desktop/claude-commands
 ```
 
 ### 2. Install
