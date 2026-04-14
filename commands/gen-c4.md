@@ -28,24 +28,29 @@ LAYOUT_WITH_LEGEND()
 
 title <System Name> — C4 Container Diagram v1.0.0
 
-Person(<alias>, "<Name>", "<Description>")
+Person(user, "User", "Description of the user")
 
-System_Boundary(<alias>, "<System Name>") {
+System_Boundary(system, "System Name") {
 
-  Container(<alias>, "<Name>", "<Technology>", "<Description>")
+  Container(service_a, "Service A", "Technology", "Description")
 
-  System_Boundary(<alias>, "<Sub-boundary Name>") {
-    Container(<alias>, "<Name>", "<Technology>", "<Description>")
-    ContainerDb(<alias>, "<Name>", "<Technology>", "<Description>")
+  System_Boundary(sub_boundary, "Sub-boundary Name") {
+    Container(service_b, "Service B", "Technology", "Description")
+    Container(service_c, "Service C", "Technology", "Description")
+
+    ContainerDb(db, "Database", "Technology", "Description")
   }
 }
 
 System_Boundary(external, "External Systems") {
-  Container(<alias>, "<Name>", "<Technology>", "<Description>")
+  Container(ext_service, "External Service", "Technology", "Description")
 }
 
 ' Relationships
-Rel(<from>, <to>, "<Description>")
+Rel(user, service_a, "Description of interaction")
+Rel(service_a, service_b, "Description of interaction")
+Rel(service_b, db, "Description of interaction")
+Rel(service_b, ext_service, "Description of interaction")
 
 @enduml
 ```
@@ -57,7 +62,7 @@ Rules:
 - Use `Person` for human actors
 - Keep descriptions concise — one short sentence
 - Include technology (e.g. `Java`, `Kafka`, `PostgreSQL`, `MinIO`) where known
-- Add a `' Relationships` section at the end grouping all `Rel()` calls
+- Group all `Rel()` calls under a `' Relationships` comment at the end
 
 ### Step 3 — Render to PNG
 
