@@ -1,0 +1,8 @@
+# Normalise line endings on commit; checkout with LF on Unix, CRLF on Windows
+* text=auto
+
+# Shell scripts must always use LF — CRLF breaks the shebang and bash parsing
+*.sh text eol=lf
+
+# Markdown files: normalise on commit, native line endings on checkout
+*.md text
